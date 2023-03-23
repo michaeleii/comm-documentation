@@ -15,6 +15,18 @@ markdown_extensions:
   - admonition
   - codehilite
   - def_list
+  - tables
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.details
 
 theme:
   name: material
@@ -23,6 +35,8 @@ theme:
     - navigation.sections
     - navigation.top
     - toc.integrate
+    - content.code.copy
+    - content.code.annotate
 
   palette:
     - media: "(prefers-color-scheme: light)"
