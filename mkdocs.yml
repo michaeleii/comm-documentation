@@ -8,7 +8,7 @@ theme:
         primary: blue grey
         accent: deep purple
         toggle:
-          icon: material/weather-sunny
+          icon: material/brightness-7
           name: Switch to dark mode
 
       - media: "(prefers-color-scheme: dark)"
@@ -16,7 +16,7 @@ theme:
         primary: red
         accent: red
         toggle:
-          icon: material/weather-night
+          icon: material/brightness-4
           name: Switch to light mode
 
 copyright: Copyright &copy; 2023  Michael Lei and Devynn Nguyen
