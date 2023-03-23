@@ -1,6 +1,6 @@
 # Introduction
 
-yooooo this is an intro to the entire thing
+yooooo this is an intro to the entire thing :wave:
 
 ## What is Passport.js?
 
