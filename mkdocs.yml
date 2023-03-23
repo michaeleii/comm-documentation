@@ -1,4 +1,4 @@
-site_name: Passport.js
+site_name: Passport User Documentation
 nav:
   - Home: "index.md"
   - Project Structure: "pages/project-structure.md"
@@ -7,8 +7,22 @@ nav:
   - Using passport-local: "pages/using-passport-local.md"
   - Logging in: "pages/logging-in.md"
 
+markdown_extensions:
+  - toc:
+      toc_depth: 3
+  - attr_list
+  - footnotes
+  - admonition
+  - codehilite
+  - def_list
+
 theme:
   name: material
+
+  features:
+    - navigation.sections
+    - navigation.top
+    - toc.integrate
 
   palette:
     - media: "(prefers-color-scheme: light)"
