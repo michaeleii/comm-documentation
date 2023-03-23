@@ -1,4 +1,12 @@
-site_name: Passport JS
+site_name: Passport.js
+nav:
+  - Home: "pages/index.md"
+  - Project Structure: "pages/project-structure.md"
+  - Setting up Express.js: "pages/express-setup.md"
+  - Creating Login Form: "pages/login-form.md"
+  - Using passport-local: "pages/using-passport-local.md"
+  - Logging in: "pages/logging-in.md"
+
 theme:
   name: material
 
