@@ -1,6 +1,7 @@
 site_name: Passport User Documentation
 nav:
   - Home: "index.md"
+  - Project Overview: "pages/login-form-tutorial.md"
   - Project Structure: "pages/project-structure.md"
   - Setting up Express.js: "pages/express-setup.md"
   - Creating Login Form: "pages/login-form.md"
