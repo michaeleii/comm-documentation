@@ -27,4 +27,8 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
 
+plugins:
+  - search:
+      lang: en
+
 copyright: Copyright &copy; 2023  Michael Lei and Devynn Nguyen
