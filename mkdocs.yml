@@ -37,8 +37,8 @@ theme:
   name: material
 
   features:
+    - navigation.footer
     - navigation.top
-    - toc.integrate
     - content.code.copy
     - content.code.annotate
 
