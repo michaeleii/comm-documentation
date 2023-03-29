@@ -14,7 +14,7 @@ app.get("/login", (req, res) => {
 });
 ```
 
-This will add a `GET` route to the `/login` route in `app.js`.
+This will add a `GET` route to the `/login` route in `app.js`. This will render the `login.ejs` file when the `/login` route is requested.
 
 #### 2. Editing the `login.ejs` file
 
@@ -39,7 +39,7 @@ This will add a `GET` route to the `/login` route in `app.js`.
 </html>
 ```
 
-This render a simple login form when the `/login` route is requested.
+This will create a simple login page that will be rendered when the `/login` route is requested. The form will send a `POST` request to the `/login` route.
 
 #### 3. Add the `/login` POST route to `app.js`
 
@@ -52,4 +52,6 @@ app.post("/login", (req, res) => {
 });
 ```
 
-This will add a `POST` route to the `/login` route in `app.js`. For now we are just logging the username and password to the console to make sure that the form is working.
+This will add a `POST` route to the `/login` route in `app.js`.
+
+For now we are just logging the username and password to the console to make sure that the form is working.

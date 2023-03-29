@@ -36,29 +36,43 @@ This will navigate to the `login-form-tutorial` directory.
 
 ## Installing Node Modules
 
-#### 1. Install Express
+#### 1. Create a `package.json` File
+
+```bash
+npm init -y
+```
+
+This will create a file called `package.json` inside the `login-form-tutorial` directory.
+
+This file is used to store all the project dependencies.
+
+#### 2. Install Express
 
 ```bash
 npm install express
 ```
 
-This will install the Express module and add it to the `package.json` file.
+This will install the Express module. [Express](https://expressjs.com/) is a minimalistic web framework for Node.js.
 
-#### 2. Install EJS
+#### 3. Install EJS
 
 ```bash
 npm install ejs
 ```
 
-This will install the EJS module and add it to the `package.json` file.
+This will install the EJS module.
 
-#### 3. Install Nodemon
+EJS is a templating engine that we will be using to render our HTML pages.
+
+#### 4. Install Nodemon
 
 ```bash
 npm install nodemon --save-dev
 ```
 
 This will install the nodemon module and add it to the `package.json` file as a development dependency.
+
+Nodemon is a module that automatically restarts the server whenever a file is changed.
 
 ## Setting up the Project Directory
 

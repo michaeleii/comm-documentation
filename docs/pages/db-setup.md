@@ -95,9 +95,9 @@ At the top of the page before the index route, put the following code:
 
 ```js
 ...
-const db = require("./users");
+const db = require("./users"); // <--- import the database
 
-app.get("/", (req, res) => {
+app.get("/", (req, res) => { // <--- index route
     res.render("index");
 });
 ...

@@ -58,7 +58,7 @@ app.use(
 
 This intializes the express session middleware which will be used to store the user's session data.
 
-For more information on how to configure the express session middleware and the different options, check out the [Express Session documentation](https://www.npmjs.com/package/express-session).
+For more information on how to configure the express session middleware and the different options, check out the [Express Session documentation](https://github.com/expressjs/session#options).
 
 #### 3. Configure Passport
 
@@ -77,9 +77,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 ```
 
-This will initialize Passport and Passport's session.
+The `passport.initialize()` middleware will be used to initialize Passport. The `passport.session()` middleware will be used to persist login sessions. This will allow Passport to restore the user's logged in status across page refreshes.
 
 #### 5. Serialize and Deserialize User
+
+- **Serialize** means to store the user's data in the session.
+- **Deserialize** means to get the user's data from the session.
 
 ```js
 // Serialize User
@@ -96,23 +99,18 @@ passport.deserializeUser((id, done) => {
 });
 ```
 
-This will serialize and deserialize the user. This is needed to keep the user's session data.
+The `serializeUser` and `deserializeUser` functions are used to store the user's session data.
+
+Heres how it works:
+
+- The serialize user function will be called when the user logs in. It will store the user's id in the session.
+
+- The deserialize user function will be called when the user visits the website again. It will get the user's information from the database using the id stored in the session.
+
+The `done` function is used to tell Passport that the user has been serialized or deserialized.
 
 ## Conclusion
 
 In this section, we learned how to set up Passport and Passport's Local Strategy to authenticate users using a username and password.
 
 In the next tutorial, we will try to log in a user using the login form page that we created in the previous section.
-
-<!-- This section will show you the login form flow and how it works in the context of passport authentication.
-
-## Login Form Flow
-
-The login form flow is as follows:
-
-1. The user enters their username and password in the login form.
-2. The user clicks the login button.
-3. The form data is sent to the server.
-4. Passport will authenticate the user using the local strategy.
-5. If the user is authenticated, the user will be redirected to the homepage.
-6. If the user is not authenticated, the user will be redirected back to the login page. -->
