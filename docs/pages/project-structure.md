@@ -74,6 +74,17 @@ This will install the nodemon module and add it to the `package.json` file as a 
 
 Nodemon is a module that automatically restarts the server whenever a file is changed.
 
+#### 5. Put the `start` Script in the `package.json` File
+
+```json
+
+"scripts": {
+    "start": "nodemon app.js"
+  },
+```
+
+This will add the `start` script to the `package.json` file. This script will allow us to type `npm start` and start the server.
+
 ## Setting up the Project Directory
 
 #### 1. Creating the Style.css File
