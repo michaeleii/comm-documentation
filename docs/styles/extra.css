@@ -6,9 +6,9 @@
 	--md-footer-bg-color: #080808;
 	--md-footer-bg-color--dark: #030303;
 	--md-default-fg-color--light: #ffffff;
-	--md-accent-fg-color: #4ffd3f;
+	--md-accent-fg-color: #16a709;
 }
 
 [data-md-color-scheme="slate"][data-md-color-primary="black"] {
-	--md-typeset-a-color: #68ce64;
+	--md-typeset-a-color: #44d43f;
 }
