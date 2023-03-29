@@ -4,6 +4,7 @@ nav:
   - Project Overview: "pages/login-form-tutorial.md"
   - Project Structure: "pages/project-structure.md"
   - Setting up Express.js: "pages/express-setup.md"
+  - Setting up the Sample Database: "pages/db-setup.md"
   - Creating Login Form: "pages/login-form.md"
   - Using passport-local: "pages/using-passport-local.md"
   - Logging in: "pages/logging-in.md"
@@ -45,16 +46,16 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: blue grey
-      accent: deep purple
+      primary: green
+      accent: green
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
 
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: red
-      accent: red
+      primary: green
+      accent: green
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
