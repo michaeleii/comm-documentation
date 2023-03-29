@@ -67,4 +67,7 @@ plugins:
   - search:
       lang: en
 
+extra_css:
+  - styles/extra.css
+
 copyright: Copyright &copy; 2023  Michael Lei and Devynn Nguyen
