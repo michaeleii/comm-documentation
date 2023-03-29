@@ -65,25 +65,38 @@ For more information on how to configure the express session middleware and the 
 ```js
 // Configure Passport to use Local Strategy
 passport.use(new LocalStrategy());
+```
 
-// Configure Passport authenticated session persistence
+This will configure Passport to use the Local Strategy.
+
+#### 4. Initialize Passport
+
+```js
+// Initialize Passport
+app.use(passport.initialize());
+app.use(passport.session());
+```
+
+This will initialize Passport and Passport's session.
+
+#### 5. Serialize and Deserialize User
+
+```js
+// Serialize User
 passport.serializeUser((user, done) => {
 	done(null, user.id);
 });
 
+// Deserialize User
+
 passport.deserializeUser((id, done) => {
-	User.findById(id, (err, user) => {
-		if (err) {
-			return done(err);
-		}
-		done(null, user);
+	db.getUserbyId(id, (err, user) => {
+		done(err, user);
 	});
 });
-
-// Initialize Passport and restore authentication state, if any, from the session.
-app.use(passport.initialize());
-app.use(passport.session());
 ```
+
+This will serialize and deserialize the user. This is needed to keep the user's session data.
 
 ## Conclusion
 

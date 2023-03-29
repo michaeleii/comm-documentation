@@ -11,6 +11,8 @@ In our case, we want to store the following data:
 - username
 - password
 
+We will also have a unique id for each user. This will allow us to easily identify a user each id is unique to a specific user.
+
 ## Create the database
 
 Now that we have a mental model of a user, we can start creating the database.
@@ -33,10 +35,12 @@ This will allow us to test our login feature.
 ```js
 const users = [
 	{
+		id: 1,
 		username: "John",
 		password: "password",
 	},
 	{
+		id: 2,
 		username: "Jane",
 		password: "password",
 	},
@@ -61,15 +65,29 @@ const getUserByUsernameAndPassword = (username, password) => {
 };
 ```
 
-#### 2. Export the `getUserByUsernameAndPassword` function
+This function will return the user object if the username and password match. Otherwise, it will return `undefined`.
+
+#### 2. Add a function that will get a user by id
+
+At the bottom of the `userDB.js` file, add the following function:
+
+```js
+const getUserById = (id) => {
+	return users.find((user) => user.id === id);
+};
+```
+
+This function will return the user object if the id matches. Otherwise, it will return `undefined`.
+
+#### 3. Export the functions
 
 At the bottom page put the following code:
 
 ```js
-module.exports = { getUserByUsernameAndPassword };
+module.exports = { getUserByUsernameAndPassword, getUserById };
 ```
 
-This will allow us to use the `getUserByUsernameAndPassword` function in our `app.js` file.
+This will allow us to use the functions in our `app.js` file.
 
 #### 3. Import the function that will verify username and password in `app.js`
 
@@ -77,7 +95,7 @@ At the top of the page before the index route, put the following code:
 
 ```js
 ...
-const { getUser } = require("./users");
+const db = require("./users");
 
 app.get("/", (req, res) => {
     res.render("index");
@@ -85,7 +103,7 @@ app.get("/", (req, res) => {
 ...
 ```
 
-This will allow us to use the `getUserByUsernameAndPassword` function in our `app.js` file.
+This will allow us to use the our database querying functions in our `app.js` file.
 
 ## Conclusion
 

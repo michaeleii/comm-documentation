@@ -106,10 +106,6 @@ This file will hold all the code for the Express app.
 
 ## Conclusion
 
-In this section, we learned how to:
-
-- [x] Create the project directory
-- [x] Install the required node modules.
-- [x] Setup the project directory.
+In this section, we created the project directory and installed the required Node modules.
 
 In the next section, we will setup the Express server.
