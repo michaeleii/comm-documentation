@@ -34,3 +34,9 @@ The project structure will be as follows:
     |-- package.json                 # Package.json File
     |-- node_modules                 # Node Modules Directory
 ```
+
+## Conclusion
+
+In this section we looked at the project structure and the technologies that we will be using in this tutorial.
+
+In the next section, we will be setting up the project directory and installing the required libraries.
