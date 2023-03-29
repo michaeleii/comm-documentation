@@ -102,14 +102,14 @@ touch app.js
 
 This will create a file called `app.js` inside the `login-form-tutorial` directory.
 
-This file will hold all the code for the express app.
+This file will hold all the code for the Express app.
 
 ## Conclusion
 
 In this section, we learned how to:
 
-- [x] create the project directory
-- [x] install the required node modules.
-- [x] setup the project directory.
+- [x] Create the project directory
+- [x] Install the required node modules.
+- [x] Setup the project directory.
 
-In the next section, we will setup the express server.
+In the next section, we will setup the Express server.

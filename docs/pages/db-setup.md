@@ -11,7 +11,7 @@ In our case, we want to store the following data:
 - username
 - password
 
-### Create the database
+## Create the database
 
 Now that we have a mental model of a user, we can start creating the database.
 
@@ -45,7 +45,7 @@ const users = [
 
 This function will return the user object if the username and password match. Otherwise, it will return `undefined`.
 
-### Querying the database
+## Query the database
 
 Now that we have a database, we need to be able to query it. This will allow us to check if a user's username and password is correct.
 
@@ -84,3 +84,11 @@ app.get("/", (req, res) => {
 });
 ...
 ```
+
+This will allow us to use the `getUserByUsernameAndPassword` function in our `app.js` file.
+
+## Conclusion
+
+In this section, we created a database that will store our users. We also created a function that will allow us to query the database and check if a user's username and password is correct.
+
+In the next section, we will create the login form page that will allow users to log in to our website using a username and password.

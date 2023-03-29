@@ -8,7 +8,7 @@ To learn more about Express, visit the official [Express website](http://express
 
 ## Setting up Express
 
-#### 1. Creating a simple Express app
+#### 1. Create an Express app
 
 ```javascript
 const express = require("express");
@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-	res.render("index", { username });
+	res.render("index");
 });
 
 app.get("/login", (req, res) => {
@@ -31,11 +31,11 @@ app.listen(3000, () => {
 });
 ```
 
-This will create a simple Express app that listens on port 3000 and renders the `index.ejs` file when the `/` route is requested. It also renders the `login.ejs` file when the `/login` route is requested.
+This will create a basic Express app that listens on port 3000 and renders the `index.ejs` file when the `/` route is requested. It also renders the `login.ejs` file when the `/login` route is requested.
 
 The `login.ejs` file will be created in the next section.
 
-#### 2. Creating the `index.ejs` file
+#### 2. Edit the `index.ejs` file
 
 ```html
 <!DOCTYPE html>
@@ -52,4 +52,4 @@ The `login.ejs` file will be created in the next section.
 </html>
 ```
 
-This will create a simple `index.ejs` file that will be rendered when the `/` route is requested.
+This will create a simple home page that will be rendered when the `/` route is requested. There is also a link to the `/login` route.
