@@ -2,9 +2,7 @@
 
 ## Overview
 
-In this tutorial, we will be creating a login form using Passport.js.
-
-We will be using the following technologies:
+In this tutorial, we will be creating a login form using the following technologies:
 
 - Node.js
 - Express.js
@@ -12,12 +10,15 @@ We will be using the following technologies:
 - Passport.js
 - EJS
 
+The aim of this tutorial is to help you learn how to integrate Passport.js to authenticate users in your own web applications.
+
 ## Pre-requisites
 
-- Basic knowledge of HTML and CSS
-- Basic knowledge of Node.js and Express.js
-- Basic knowledge of Express Middlewares
-- Basic knowledge of EJS
+- Basic knowledge of HTML and CSS and how to use them to build a simple web page.
+- Basic knowledge of Node.js and Express.js and how to use them to build a simple web application.
+- Basic knowledge of EJS and how to use it to render HTML templates.
+- Basic knowledge of middlewares and how to use them in Express.js.
+- Abilty to use the terminal to run commands.
 
 ## Project Structure
 
