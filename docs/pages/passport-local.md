@@ -60,6 +60,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const session = require("express-session");
 
+// Initialize Express Session
 app.use(
 	session({
 		secret: "secret",
@@ -75,20 +76,9 @@ This intializes the express session middleware which will be used to store the u
 
 For more information on how to configure the express session middleware and the different options, check out the [Express Session documentation](https://github.com/expressjs/session#options).
 
-#### 3. Configure Passport
+#### 3. Initialize Passport
 
 After the express session middleware, put the following code:
-
-```js
-// Configure Passport to use Local Strategy
-passport.use(new LocalStrategy());
-```
-
-This will tell Passport to use the Local Strategy.
-
-#### 4. Initialize Passport
-
-After the `passport.use()` function, put the following code:
 
 ```js
 // Initialize Passport
@@ -98,7 +88,54 @@ app.use(passport.session());
 
 The `passport.initialize()` middleware will be used to initialize Passport. The `passport.session()` middleware will be used to persist login sessions. This will allow Passport to restore the user's logged in status across page refreshes.
 
-#### 5. Serialize and Deserialize User
+#### 4. Configure Passport
+
+After the `passport.session()` middleware, put the following code:
+
+```js
+// Configure Passport Local Strategy
+passport.use(
+	new LocalStrategy((username, password, done) => {
+		// Check if the username and password are correct
+		const user = db.getUserByUsernameAndPassword(username, password);
+		if (user) {
+			// If the user exists, return the user's information
+			return done(null, user);
+		} else {
+			// If the user does not exist, return false and a message
+			return done(null, false, { message: "Incorrect username or password." });
+		}
+	})
+);
+```
+
+This will configure Passport to use the Local Strategy. The `y(username, password, done)` is a verify function will be used to check if the username and password are correct.
+
+- If they are correct, the `done` function will be called with the user's information.
+- If they are incorrect, the `done` function will be called with `false`.
+
+#### 5. Add the passport.authenticate middleware to the login route
+
+After the previous function configuring the local strategy, replace the POST login route with the following code:
+
+```js
+// Login Route
+
+app.post(
+	"/login",
+	passport.authenticate("local", {
+		successRedirect: "/",
+		failureRedirect: "/login",
+	})
+);
+```
+
+This will add the `passport.authenticate` middleware to the login route. This middleware will call the verfiy function we configured earlier for the local strategy.
+
+- The `successRedirect` will be called if the user's username and password are correct.
+- The `failureRedirect` will be called if the user's username and password are incorrect.
+
+#### 6. Serialize and Deserialize User
 
 - **Serialize** means to store the user's data in the session.
 - **Deserialize** means to get the user's data from the session.
@@ -111,7 +148,7 @@ passport.serializeUser((user, done) => {
 
 // Deserialize User
 passport.deserializeUser((id, done) => {
-	db.getUserbyId(id, (err, user) => {
+	db.getUserById(id, (err, user) => {
 		done(err, user);
 	});
 });
@@ -125,7 +162,7 @@ Heres how it works:
 
 - The deserialize user function will be called when the user visits the website again. It will get the user's information from the database using the id stored in the session.
 
-The `done` function is used to tell Passport that the user has been serialized or deserialized.
+The `done` function here is used to tell Passport that the user has been serialized or deserialized.
 
 ## Conclusion
 

@@ -38,17 +38,24 @@ How ever the page still says `Not Logged In` and `Login`. This is because we hav
 
 #### 4. Displaying the user's name on the homepage
 
-We will now display the currently logged in user on the homepage.
+We will now display the currently logged in user on the homepage. To do this, we will need to access the currently logged in user in the EJS page.
 
-In the app.js file, we can access the currently logged in user using the `req.user` property. We can pass this user to the `index.ejs` file using the `res.render()` method.
+In the app.js file, we can create a middleware function that will set the currently logged in user to a variable that we can access in our EJS page.
 
 ```javascript
-app.get("/", (req, res) => {
-	res.render("index", { currentLoggedInUser: req.user });
+app.use((req, res, next) => {
+	res.locals.currentLoggedInUser = req.user;
+	next();
 });
 ```
 
-This will set the `currentLoggedInUser` variable to the current logged in user and we will be able to access this variable in our EJS page.
+Using the `res.locals` object, we can set a variable that we can access in our EJS page. In this case, we are setting the `currentLoggedInUser` variable to the `req.user` object.
+
+!!!info "How does `res.locals` work?"
+
+    In Express, `res.locals` is an object that is available throughout the lifecycle of a request. It is used to pass data from the server to the views that are rendered during that request-response cycle.
+
+    To learn more about `res.locals`, check out the [Express documentation](https://expressjs.com/en/api.html#res.locals).
 
 In the index.ejs file, we can now display the user's name if the user is logged in. Otherwise, we will display `Not Logged In` and a link to the login page.
 
@@ -80,10 +87,6 @@ Try logging in and out and see if the user's name is displayed on the homepage.
 
 ## Conclusion
 
-Congratulations! 👏 You have successfully created a login form using Passport's local strategy. You should now be able to authenticate users for your own projects.
+In this section, we created a login form that will allow users to log in to our website using a username and password. However, you might have noticed that when we click the logout link it doesn't work.
 
-## Next Steps
-
-To learn more about Passport and other strategies, check out the [Passport documentation](http://www.passportjs.org/docs/).
-
-To view the full code for this project, check out the [GitHub repository]().
+In the next section, we will create a logout feature that will allow users to log out of our website.
