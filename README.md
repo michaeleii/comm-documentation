@@ -32,10 +32,8 @@ We used Mkdocs to build this documentation as it is a static site generator that
 
 The documentation was written entirely in markdown.
 
-We learned how to add:
+We learned how to add the following things into our documentation using markdown:
 
 - Code snippets
 - Images
 - Links
-
-into our documentation using markdown.
