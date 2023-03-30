@@ -24,6 +24,8 @@ Below is a link to our documentation:
 
 ## How we built this documentation
 
+This documentation was built using our knowledge of the topic from our (COMP 2523 Object Oriented Programming)[[https://www.bcit.ca/outlines/20231087556/] course at BCIT. In addition we also looked at the official documentation for Passport.js to get a better understanding of the topic.
+
 ### MkDocs
 
 We used Mkdocs to build this documentation as it is a static site generator that is geared towards building project documentation fast and quickly. In addition we were able to use the [Mkdocs Material Theme](https://squidfunk.github.io/mkdocs-material/) and incorporate additional styles to make the documentation look more visually appealing.
