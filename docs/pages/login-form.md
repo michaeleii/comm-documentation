@@ -6,6 +6,7 @@ This section will guide you through the process of setting up the login form pag
 
 #### 1. Add the `/login` GET route to `app.js`
 
+If have already made a login route in `app.js` from the previous section, you can skip this step.
 Put the following code at the bottom of the `app.js` file, just before the `app.listen` function:
 
 ```javascript
@@ -19,7 +20,7 @@ app.listen(3000, () => {
 });
 ```
 
-This will add a `GET` route to the `/login` route in `app.js`. This will render the `login.ejs` file when the `/login` route is requested.
+This will add a `GET` route to the `/login` route in `app.js`. This will display the `login.ejs` file when the `/login` route is requested.
 
 #### 2. Editing the `login.ejs` file
 
@@ -54,6 +55,7 @@ Put the following code at the bottom of the `app.js` file:
 app.post("/login", (req, res) => {
 	const { username, password } = req.body;
 	console.log({ username, password });
+	res.redirect("/login");
 });
 ```
 

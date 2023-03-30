@@ -38,14 +38,27 @@ This will install Passport and Passport's Local Strategy. We will also need to i
 #### 1. Require the packages in `app.js`
 
 ```javascript
+....
+app.use(express.static("public"));
+
+// Require Passport and Express Session
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const session = require("express-session");
+
+const db = require("./userDb");
+...
 ```
 
 #### 2. Set up Express Session
 
+Put the following code after where you required the `express-session` package.
+
 ```js
+const passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
+const session = require("express-session");
+
 app.use(
 	session({
 		secret: "secret",
@@ -54,6 +67,7 @@ app.use(
 		cookie: { secure: true },
 	})
 );
+...
 ```
 
 This intializes the express session middleware which will be used to store the user's session data.
@@ -61,6 +75,8 @@ This intializes the express session middleware which will be used to store the u
 For more information on how to configure the express session middleware and the different options, check out the [Express Session documentation](https://github.com/expressjs/session#options).
 
 #### 3. Configure Passport
+
+After the express session middleware, put the following code:
 
 ```js
 // Configure Passport to use Local Strategy
@@ -70,6 +86,8 @@ passport.use(new LocalStrategy());
 This will configure Passport to use the Local Strategy.
 
 #### 4. Initialize Passport
+
+After the `passport.use()` function, put the following code:
 
 ```js
 // Initialize Passport
@@ -91,7 +109,6 @@ passport.serializeUser((user, done) => {
 });
 
 // Deserialize User
-
 passport.deserializeUser((id, done) => {
 	db.getUserbyId(id, (err, user) => {
 		done(err, user);
