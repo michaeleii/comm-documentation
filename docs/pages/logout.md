@@ -8,7 +8,7 @@ To create a logout route, add the following code after the POST login route in o
 
 ```js
 app.get("/logout", (req, res) => {
-	req.logout();
+	req.logout((err) => console.log(err));
 	res.redirect("/");
 });
 ```
