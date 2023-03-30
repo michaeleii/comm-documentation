@@ -4,7 +4,9 @@
 
 ### What is Passport.js?
 
-Passport JS is a widely used middleware for handling authentication in Node.js web applications. It can help developers save a lot of time and effort in implementing authentication and managing user sessions.
+Passport JS is a widely used middleware for handling authentication in Node.js web applications.
+
+It can help you save a lot of time and effort in implementing authentication and managing user sessions in your web applications.
 
 ### Getting Started with Passport.js
 
