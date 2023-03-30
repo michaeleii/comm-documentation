@@ -43,3 +43,5 @@ We learned how to add the following things into our documentation using markdown
 ## Learning Outcomes
 
 From building this documentation we learned how to write clear and concise instructions to communicate to users how to use a certain technology.
+
+We have also gained valuable experience in working with Markdown and using Mkdocs to create a documentation website and this experience will help us make a documentation site quickly in the future for web technologies that we may develop or be working on.
