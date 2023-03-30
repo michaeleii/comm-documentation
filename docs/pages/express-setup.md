@@ -53,3 +53,9 @@ The `login.ejs` file will be created in the next section.
 ```
 
 This will create a simple home page that will be rendered when the `/` route is requested. There is also a link to the `/login` route.
+
+## Conclusion
+
+In this section we set up Express for our project. We created a basic Express app that listens on port 3000 and renders the `index.ejs` file when the `/` route is requested. It also renders the `login.ejs` file when the `/login` route is requested.
+
+In the next section, we will create a sample database with users to test our login form.

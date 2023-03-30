@@ -87,7 +87,15 @@ This will add the `start` script to the `package.json` file. This script will al
 
 ## Setting up the Project Directory
 
-#### 1. Creating the Style.css File
+#### 1. Create the `public` Directory
+
+```bash
+mkdir public
+```
+
+This will create a directory called `public`, which will hold all the static files for the project. Static files are files that are not rendered by the server, such as images, CSS files, and JavaScript files.
+
+#### 2. Creating the Style.css File
 
 ```bash
 touch public/style.css
@@ -95,7 +103,7 @@ touch public/style.css
 
 This will create a file called `style.css` inside the `public` directory.
 
-#### 2. Creating the Views Directory
+#### 3. Creating the Views Directory
 
 ```bash
 mkdir views
@@ -103,7 +111,7 @@ mkdir views
 
 This will create a directory called `views`, which will hold all the ejs files for the project.
 
-#### 3. Creating the Homepage Ejs File
+#### 4. Creating the Homepage Ejs File
 
 ```bash
 touch views/index.ejs
@@ -111,7 +119,7 @@ touch views/index.ejs
 
 This will create a file called `index.ejs` inside the `views` directory.
 
-#### 4. Creating the Login Page Ejs File
+#### 5. Creating the Login Page Ejs File
 
 ```bash
 touch views/login.ejs
@@ -119,7 +127,7 @@ touch views/login.ejs
 
 This will create a file called `login.ejs` inside the `views` directory.
 
-#### 5. Creating the Express App File
+#### 6. Creating the Express App File
 
 ```bash
 touch app.js
