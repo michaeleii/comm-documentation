@@ -27,3 +27,15 @@ Below is a link to our documentation:
 ### MkDocs
 
 We used Mkdocs to build this documentation as it is a static site generator that is geared towards building project documentation fast and quickly. In addition we were able to use the [Mkdocs Material Theme](https://squidfunk.github.io/mkdocs-material/) and incorporate additional styles to make the documentation look more visually appealing.
+
+### Markdown
+
+The documentation was written entirely in markdown.
+
+We learned how to add:
+
+- Code snippets
+- Images
+- Links
+
+into our documentation using markdown.
