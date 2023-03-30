@@ -12,6 +12,9 @@ nav:
   - Troubleshooting: "pages/troubleshoot.md"
   - Glossary: "pages/glossary.md"
 
+repo_url: https://github.com/michaeleii/passport-user-documentation
+repo_name: michaeleii/passport-user-documentation
+
 markdown_extensions:
   - toc:
       toc_depth: 3
