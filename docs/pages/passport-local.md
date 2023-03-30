@@ -41,12 +41,12 @@ This will install Passport and Passport's Local Strategy. We will also need to i
 ....
 app.use(express.static("public"));
 
-// Require Passport and Express Session
+const db = require("./userDb");
+
+// Require Passport and Express Session here
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const session = require("express-session");
-
-const db = require("./userDb");
 ...
 ```
 
@@ -55,6 +55,7 @@ const db = require("./userDb");
 Put the following code after where you required the `express-session` package.
 
 ```js
+...
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const session = require("express-session");
@@ -83,7 +84,7 @@ After the express session middleware, put the following code:
 passport.use(new LocalStrategy());
 ```
 
-This will configure Passport to use the Local Strategy.
+This will tell Passport to use the Local Strategy.
 
 #### 4. Initialize Passport
 
