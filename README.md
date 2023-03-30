@@ -39,3 +39,7 @@ We learned how to add the following things into our documentation using markdown
 - Code snippets
 - Images
 - Links
+
+## Learning Outcomes
+
+From building this documentation we learned how to write clear and concise instructions to communicate to users how to use a certain technology.
