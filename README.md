@@ -8,6 +8,6 @@ Passport JS is a widely used middleware for handling authentication in Node.js w
 
 ### Getting Started with Passport.js
 
-We have created a tutorial that will help you get started with Passport.js:
+In the documentation, we have created a login form tutorial that will help you get started with Passport.js:
 
-[Login Form Tutorial](pages/login-form-tutorial)
+[Login Form Tutorial](https://michaeleii.github.io/passport-user-documentation/pages/login-form-tutorial/)
