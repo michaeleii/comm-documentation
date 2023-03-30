@@ -1,8 +1,8 @@
 ## Overview
 
-In this section, we will be creating a logout feature for our project.
+In this section, we will be creating a logout feature for our project, which will allow us to logout after clicking the logout button.
 
-## Logout Route
+## Creating a logout route
 
 To create a logout route, add the following code after the POST login route in our `app.js` file:
 

@@ -11,6 +11,8 @@ Heres a preview of what we will be building:
 
 ## Setting up the login page
 
+In this section we will be setting up the login page for our project.
+
 #### 1. Add the `/login` GET route to `app.js`
 
 If have already made a login route in `app.js` from the previous section, you can skip this step.

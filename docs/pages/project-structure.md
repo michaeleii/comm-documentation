@@ -99,6 +99,8 @@ This will add the `start` script to the `package.json` file. This script will al
 
 This will make it easier for us to start the server insteading of typing `nodemon app.js` in the terminal we can just use `npm start`.
 
+In the next section, we will be setting up the project directory.
+
 ## Setting up the Project Directory
 
 Now that we have finished installing the required node modules, we will be setting up the project directory.

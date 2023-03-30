@@ -47,7 +47,7 @@ const users = [
 ];
 ```
 
-This function will return the user object if the username and password match. Otherwise, it will return `undefined`.
+This function will return the user object if the username and password match. Otherwise, it will return `undefined`. In the next section we will be creating functions to search the database for a user.
 
 ## Query the database
 
@@ -101,7 +101,7 @@ app.get("/", (req, res) => { // <--- index route
 ...
 ```
 
-This will allow us to use the our database querying functions in our `app.js` file.
+This will allow us to use the our database querying functions in our `app.js` file. We will be using these functions to verify the username and password.
 
 ## Conclusion
 

@@ -31,9 +31,11 @@ To install Passport, Passport's Local Strategy and Express Session run the follo
 npm install passport passport-local express-session
 ```
 
-This will install Passport and Passport's Local Strategy. We will also need to install the `express-session` package to store the user's session data.
+This will install Passport and Passport's Local Strategy. We will also need to install the `express-session` package to store the user's session data. In the next section, we will learn how to set up Passport.
 
 ### Setting up Passport
+
+Now that we have installed the required packages, we can start setting up Passport.
 
 #### 1. Require the packages in `app.js`
 
