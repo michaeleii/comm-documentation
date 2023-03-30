@@ -6,17 +6,24 @@ This section will guide you through the process of setting up the login form pag
 
 #### 1. Add the `/login` GET route to `app.js`
 
-Put the following code at the bottom of the `app.js` file:
+Put the following code at the bottom of the `app.js` file, just before the `app.listen` function:
 
 ```javascript
-app.get("/login", (req, res) => {
+...
+app.get("/login", (req, res) => { //<--- Put login route here
 	res.render("login");
+});
+
+app.listen(3000, () => {
+	console.log("Login App listening on port 3000!");
 });
 ```
 
 This will add a `GET` route to the `/login` route in `app.js`. This will render the `login.ejs` file when the `/login` route is requested.
 
 #### 2. Editing the `login.ejs` file
+
+In the views folder, in the `login.ejs` file, we will create a simple login page that will be rendered when the `/login` route is requested. The form will send a `POST` request to the `/login` route.
 
 ```html
 <!DOCTYPE html>
@@ -38,8 +45,6 @@ This will add a `GET` route to the `/login` route in `app.js`. This will render 
 	</body>
 </html>
 ```
-
-This will create a simple login page that will be rendered when the `/login` route is requested. The form will send a `POST` request to the `/login` route.
 
 #### 3. Add the `/login` POST route to `app.js`
 
