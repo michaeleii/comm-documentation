@@ -14,10 +14,9 @@ The aim of this tutorial is to help you learn how to integrate Passport.js to au
 
 ## Pre-requisites
 
-- Basic knowledge of HTML and CSS and how to use them to build a simple web page.
-- Basic knowledge of Node.js and Express.js and how to use them to build a simple web application.
-- Basic knowledge of EJS and how to use it to render HTML templates.
-- Basic knowledge of middlewares and how to use them in Express.js.
+- Basic knowledge of HTML and CSS - how to use them to build a simple web page.
+- Basic knowledge of Node.js and Express.js - how to create routes and knowledge of what a middleware is.
+- Basic knowledge of EJS - how to use it to render HTML templates.
 - Abilty to use the terminal to run commands.
 
 ## Project Structure
