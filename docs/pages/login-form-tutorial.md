@@ -28,10 +28,10 @@ Heres a preview of what we will be building:
 </figure>
 The aim of this tutorial is to help you learn how to integrate Passport.js to authenticate users in your own web applications.
 
-## Pre-requisites
+## Prerequisites
 
 - Basic knowledge of HTML and CSS - how to use them to build a simple web page.
-- Basic knowledge of Node.js and Express.js - how to create routes and knowledge of what a middleware is.
+- Basic knowledge of Node.js and Express.js - how to create [routes](https://expressjs.com/en/starter/basic-routing.html) and knowledge of how to create and use [Express middlewares](https://expressjs.com/en/guide/using-middleware.html).
 - Basic knowledge of EJS - how to use it to render HTML templates.
 - Abilty to use the terminal to run commands.
 

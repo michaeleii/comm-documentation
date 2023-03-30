@@ -6,6 +6,14 @@ The process of verifying the identity of a user. This is done by asking the user
 
 A small piece of data that is stored on the user's browser. It is used to store information about the user. This information can be used to identify the logged in user when they visit the website after leaving it.
 
+### Project Dependencies
+
+A package that is required by the project. These packages are installed using the:
+
+```
+npm install <package name>
+```
+
 ### Query
 
 Request to the database to get some data. This data can be anything from a single row to all the rows in a table.

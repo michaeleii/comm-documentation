@@ -51,7 +51,7 @@ This function will return the user object if the username and password match. Ot
 
 ## Query the database
 
-Now that we have a database, we need to be able to query it. This will allow us to check if a user's username and password is correct.
+Now that we have a database, we need to be able to query it. We want to be able to check if the username and password are correct. So we will create queries that will allow us to verify the username and password.
 
 #### 1. Add a function that will check if the username and password are correct.
 

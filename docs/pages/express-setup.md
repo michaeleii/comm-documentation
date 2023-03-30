@@ -8,6 +8,8 @@ To learn more about Express, visit the official [Express website](http://express
 
 ## Setting up Express
 
+In this section we will be setting up Express for our project.
+
 #### 1. Create an Express app
 
 ```javascript
@@ -31,7 +33,7 @@ app.listen(3000, () => {
 });
 ```
 
-This will create a basic Express app that listens on port 3000 and renders the `index.ejs` file when the `/` route is requested. It also renders the `login.ejs` file when the `/login` route is requested.
+This will create a basic Express app that listens on port 3000 and renders the `index.ejs` file when the `/` route is requested. It also renders the `login.ejs` file, which will be the login page when the `/login` route is requested.
 
 The `login.ejs` file will be created in the next section.
 
