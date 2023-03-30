@@ -13,6 +13,6 @@
 	--md-typeset-a-color: #44d43f;
 }
 
-[data-md-color-scheme="default"] img {
+[data-md-color-scheme="default"] figure img {
 	border: 1px solid #cdcdcd;
 }
