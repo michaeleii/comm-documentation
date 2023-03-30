@@ -13,6 +13,10 @@
 	--md-typeset-a-color: #44d43f;
 }
 
+figure img {
+	border-radius: 0.25rem;
+}
+
 [data-md-color-scheme="default"] figure img {
 	border: 1px solid #cdcdcd;
 }
