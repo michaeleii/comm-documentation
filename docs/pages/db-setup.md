@@ -93,7 +93,7 @@ At the top of the page before the index route, put the following code:
 
 ```js
 ...
-const db = require("./userDb"); // <--- import the database here
+const db = require("./userDB"); // <--- import the database here
 
 app.get("/", (req, res) => { // <--- index route
     res.render("index");
