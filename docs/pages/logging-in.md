@@ -2,7 +2,7 @@
 
 We will now try out the login feature that we have created.
 
-## Try it out
+## Testing the login feature
 
 Start the server by running the following command:
 
@@ -34,13 +34,15 @@ const users = [
 - If the username and password are correct, you will be redirected to the homepage.
 - If the username and password are incorrect, you will be redirected to the login page.
 
-How ever the page still says `Not Logged In` and `Login`. This is because we have not implemented the logic to display the user's name and a logout button.
+You may have noticed that you were redirected to the homepage, but the page still says `Not Logged In` and `Login`. This is because we have not implemented the logic to display the user's name and a logout button.
 
 #### 4. Displaying the user's name on the homepage
 
 We will now display the currently logged in user on the homepage. To do this, we will need to access the currently logged in user in the EJS page.
 
 In the app.js file, we can create a middleware function that will set the currently logged in user to a variable that we can access in our EJS page.
+
+Put the following code after where the deserializeUser function is defined:
 
 ```javascript
 app.use((req, res, next) => {
@@ -70,23 +72,25 @@ In the index.ejs file, we can now display the user's name if the user is logged 
 	</head>
 
 	<body>
-		<% if (currentLoggedInUser) { %>
+		<% if (!currentLoggedInUser) { %>
 		<h1>Not Logged In</h1>
 		<a href="/login">Login</a>
 		<% } else { %>
-		<h1><%= currentLoggedInUser.username %></h1>
+		<h1>Welcome <%= currentLoggedInUser.username %></h1>
 		<a href="/logout">Logout</a>
 		<% } %>
 	</body>
 </html>
 ```
 
-### Try it out
+#### Try it out
 
 Try logging in and out and see if the user's name is displayed on the homepage.
 
 ## Conclusion
 
-In this section, we created a login form that will allow users to log in to our website using a username and password. However, you might have noticed that when we click the logout link it doesn't work.
+In this section, we created a login form that will allow users to log in to our website using a username and password.
+
+You might have noticed that when we click the logout link it doesn't work.
 
 In the next section, we will create a logout feature that will allow users to log out of our website.

@@ -58,14 +58,12 @@ Now that we have a database, we need to be able to query it. This will allow us 
 At the bottom of the `userDB.js` file, add the following function:
 
 ```js
-const getUserByUsernameAndPassword = (username, password) => {
-	return users.find(
-		(user) => user.username === username && user.password === password
-	);
+const getUserByUsername = (username) => {
+	return users.find((user) => user.username === username);
 };
 ```
 
-This function will return the user object if the username and password match. Otherwise, it will return `undefined`.
+This function will return the user object if the username matches a user in the database. Otherwise, it will return `undefined`.
 
 #### 2. Add a function that will get a user by id
 
@@ -84,7 +82,7 @@ This function will return the user object if the id matches. Otherwise, it will 
 At the bottom page put the following code:
 
 ```js
-module.exports = { getUserByUsernameAndPassword, getUserById };
+module.exports = { getUserByUsername, getUserById };
 ```
 
 This will allow us to use the functions in our `app.js` file.

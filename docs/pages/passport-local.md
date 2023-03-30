@@ -66,7 +66,6 @@ app.use(
 		secret: "secret",
 		resave: false,
 		saveUninitialized: true,
-		cookie: { secure: true },
 	})
 );
 ...
@@ -96,23 +95,21 @@ After the `passport.session()` middleware, put the following code:
 // Configure Passport Local Strategy
 passport.use(
 	new LocalStrategy((username, password, done) => {
-		// Check if the username and password are correct
-		const user = db.getUserByUsernameAndPassword(username, password);
-		if (user) {
-			// If the user exists, return the user's information
-			return done(null, user);
-		} else {
-			// If the user does not exist, return false and a message
-			return done(null, false, { message: "Incorrect username or password." });
+		const user = db.getUserByUsername(username);
+		if (!user) {
+			return done(null, false, { message: "Incorrect username" });
+		} else if (user.password !== password) {
+			return done(null, false, { message: "Incorrect password" });
 		}
+		return done(null, user);
 	})
 );
 ```
 
-This will configure Passport to use the Local Strategy. The `y(username, password, done)` is a verify function will be used to check if the username and password are correct.
+This will configure Passport to use the Local Strategy. The `(username, password, done)` is a verify function will be used to check if the username and password are correct.
 
 - If they are correct, the `done` function will be called with the user's information.
-- If they are incorrect, the `done` function will be called with `false`.
+- If they are incorrect, the `done` function will be called with `false` and a message.
 
 #### 5. Add the passport.authenticate middleware to the login route
 
@@ -148,9 +145,12 @@ passport.serializeUser((user, done) => {
 
 // Deserialize User
 passport.deserializeUser((id, done) => {
-	db.getUserById(id, (err, user) => {
-		done(err, user);
-	});
+	const user = db.getUserById(id);
+	if (user) {
+		done(null, user);
+	} else {
+		done(null, false, { message: "User not found" });
+	}
 });
 ```
 
