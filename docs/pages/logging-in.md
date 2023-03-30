@@ -78,18 +78,12 @@ In the index.ejs file, we can now display the user's name if the user is logged 
 
 Try logging in and out and see if the user's name is displayed on the homepage.
 
-## Conclusion Congratulations! 👏 You have successfully created a login form
+## Conclusion
 
-using Passport's local strategy. You should now be able to authenticate users
-for your own projects. ## Next Steps To learn more about Passport and other
-strategies, check out the [Passport
-documentation](http://www.passportjs.org/docs/). To view the full code for this
-project, check out the [GitHub repository]().
+Congratulations! 👏 You have successfully created a login form using Passport's local strategy. You should now be able to authenticate users for your own projects.
 
-```
+## Next Steps
 
-```
+To learn more about Passport and other strategies, check out the [Passport documentation](http://www.passportjs.org/docs/).
 
-```
-
-```
+To view the full code for this project, check out the [GitHub repository]().
