@@ -58,7 +58,7 @@ In the views folder, in the `login.ejs` file, we will create a simple login page
 
 #### 3. Add the `/login` POST route to `app.js`
 
-Put the following code at the bottom of the `app.js` file:
+Put the following code at the bottom of the `app.js` file, just before the `app.listen` function:
 
 ```javascript
 app.post("/login", (req, res) => {
