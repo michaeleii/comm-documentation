@@ -29,4 +29,4 @@ You should now be able to implement a login feature to your Node.js web applicat
 
 To learn more about Passport and other strategies, check out the [Passport documentation](http://www.passportjs.org/docs/).
 
-To view the full code for this project, check out the [GitHub repository]().
+To view the full code for this project, check out the [GitHub repository](https://github.com/michaeleii/login-form-tutorial).
