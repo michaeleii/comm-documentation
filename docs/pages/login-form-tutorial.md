@@ -10,6 +10,22 @@ In this tutorial, we will be creating a login form using the following technolog
 - Passport.js
 - EJS
 
+Heres a preview of what we will be building:
+
+<figure markdown>
+  ![Image title](img/homepage.jpg)
+  <figcaption>Homepage (Not Logged in)</figcaption>
+</figure>
+
+<figure markdown>
+  ![Image title](img/login_page.jpg)
+  <figcaption>Login Page</figcaption>
+</figure>
+
+<figure markdown>
+  ![Image title](img/homepage_loggedin.jpg)
+  <figcaption>Homepage (Logged in)</figcaption>
+</figure>
 The aim of this tutorial is to help you learn how to integrate Passport.js to authenticate users in your own web applications.
 
 ## Pre-requisites

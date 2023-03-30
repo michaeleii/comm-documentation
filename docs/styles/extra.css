@@ -12,3 +12,7 @@
 [data-md-color-scheme="slate"][data-md-color-primary="black"] {
 	--md-typeset-a-color: #44d43f;
 }
+
+[data-md-color-scheme="default"] img {
+	border: 1px solid #cdcdcd;
+}

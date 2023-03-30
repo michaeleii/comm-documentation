@@ -4,7 +4,7 @@ In this section, we will be creating a logout feature for our project.
 
 ## Logout Route
 
-To create a logout route, we will need to add the following code to our `app.js` file:
+To create a logout route, add the following code after the POST login route in our `app.js` file:
 
 ```js
 app.get("/logout", (req, res) => {

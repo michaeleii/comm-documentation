@@ -2,6 +2,13 @@
 
 This section will guide you through the process of setting up the login form page for our project.
 
+Heres a preview of what we will be building:
+
+<figure markdown>
+  ![Image title](img/login_page.jpg)
+  <figcaption>Login page</figcaption>
+</figure>
+
 ## Setting up the login page
 
 #### 1. Add the `/login` GET route to `app.js`
@@ -62,3 +69,9 @@ app.post("/login", (req, res) => {
 This will add a `POST` route to the `/login` route in `app.js`.
 
 For now we are just logging the username and password to the console to make sure that the form is working.
+
+## Conclusion
+
+In this section we looked at how to create a simple login page using EJS.
+
+In the next section, we will be adding the login functionality to the login page.

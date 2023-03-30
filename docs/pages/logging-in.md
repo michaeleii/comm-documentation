@@ -87,6 +87,11 @@ In the index.ejs file, we can now display the user's name if the user is logged 
 
 Try logging in and out and see if the user's name is displayed on the homepage.
 
+<figure markdown>
+  ![Image title](img/homepage_loggedin.jpg)
+  <figcaption>Homepage with user's name</figcaption>
+</figure>
+
 ## Conclusion
 
 In this section, we created a login form that will allow users to log in to our website using a username and password.
