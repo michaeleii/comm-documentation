@@ -139,6 +139,8 @@ This will add the `passport.authenticate` middleware to the login route. This mi
 - **Serialize** means to store the user's data in the session.
 - **Deserialize** means to get the user's data from the session.
 
+Put the following code right after where you configured the local strategy:
+
 ```js
 // Serialize User
 passport.serializeUser((user, done) => {
