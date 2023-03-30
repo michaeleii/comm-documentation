@@ -24,7 +24,7 @@ Below is a link to our documentation:
 
 ## How we built this documentation
 
-This documentation was built using our knowledge of the topic from our !(COMP 2523 Object Oriented Programming)[[https://www.bcit.ca/outlines/20231087556/] course at BCIT. In addition we also looked at the official documentation for Passport.js to get a better understanding of the topic.
+This documentation was built using our knowledge of the topic from our [COMP 2523 Object Oriented Programming](https://www.bcit.ca/outlines/20231087556/) course at BCIT. In addition we also looked at the official documentation for Passport.js to get a better understanding of the topic.
 
 ### MkDocs
 
