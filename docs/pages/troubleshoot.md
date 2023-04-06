@@ -6,7 +6,17 @@ To fix this you need to make sure the path to the file is correct. If you are us
 
 This error means that you are missing the verify callback function in the `passport.use` function.
 
-## **Already included file name in path differs from file name in casing**
+To fix this, add the verify callback function to the `passport.use` function such as the following:
+
+```js
+passport.use(
+	new LocalStrategy((username, password, done) => {
+		// ...
+	})
+);
+```
+
+## **Error: Already included file name in path differs from file name in casing**
 
 This error means that the file name in the path is different from the actual file name. For example, if you have a file named `userDb.js` and you try to include it using `require('./userDB.js')`, you will get this error.
 
