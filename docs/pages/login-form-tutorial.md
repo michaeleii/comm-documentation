@@ -30,7 +30,10 @@ The aim of this tutorial is to help you learn how to integrate Passport.js to au
 
 ## Prerequisites
 
+- [Node.js](https://nodejs.org/en) installed.
+- A code editor like [Visual Studio Code](https://code.visualstudio.com/) installed.
 - Basic knowledge of HTML and CSS - how to use them to build a simple web page.
+- Basic knowledge of [npm](https://www.npmjs.com/).
 - Basic knowledge of Node.js and Express.js - how to create [routes](https://expressjs.com/en/starter/basic-routing.html) and knowledge of how to create and use [Express middlewares](https://expressjs.com/en/guide/using-middleware.html).
 - Basic knowledge of EJS - how to use it to render HTML templates.
 - Abilty to use the terminal to run commands.

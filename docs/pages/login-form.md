@@ -18,7 +18,7 @@ In this section we will be setting up the login page for our project.
 If have already made a login route in `app.js` from the previous section, you can skip this step.
 Put the following code at the bottom of the `app.js` file, just before the `app.listen` function:
 
-```javascript
+```js
 ...
 app.get("/login", (req, res) => { //<--- Put login route here
 	res.render("login");
@@ -38,21 +38,21 @@ In the views folder, in the `login.ejs` file, we will create a simple login page
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Login</title>
-	</head>
-	<body>
-		<h1>Login</h1>
-		<form action="/login" method="POST">
-			<label for="username">Username</label>
-			<input type="text" name="username" id="username" />
-			<label for="password">Password</label>
-			<input type="password" name="password" id="password" />
-			<button type="submit">Login</button>
-		</form>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <form action="/login" method="POST">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" />
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" />
+      <button type="submit">Login</button>
+    </form>
+  </body>
 </html>
 ```
 
@@ -60,17 +60,47 @@ In the views folder, in the `login.ejs` file, we will create a simple login page
 
 Put the following code at the bottom of the `app.js` file, just before the `app.listen` function:
 
-```javascript
+```js
 app.post("/login", (req, res) => {
-	const { username, password } = req.body;
-	console.log({ username, password });
-	res.redirect("/login");
+  const { username, password } = req.body;
+  console.log({ username, password });
+  res.redirect("/login");
 });
 ```
 
 This will add a `POST` route to the `/login` route in `app.js`.
 
 For now we are just logging the username and password to the console to make sure that the form is working.
+
+The final file should look like something like this:
+
+```js
+const express = require("express");
+const db = require("./userDB");
+const app = express();
+
+app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static("public"));
+
+app.get("/", (req, res) => {
+  res.render("index");
+});
+
+app.get("/login", (req, res) => {
+  res.render("login");
+});
+
+app.listen(3000, () => {
+  console.log("Login App listening on port 3000!");
+});
+
+app.post("/login", (req, res) => {
+  const { username, password } = req.body;
+  console.log({ username, password });
+  res.redirect("/login");
+});
+```
 
 ## Conclusion
 

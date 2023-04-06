@@ -9,6 +9,7 @@ nav:
   - Configuring Passport: "pages/passport-local.md"
   - Logging in: "pages/logging-in.md"
   - Logging out: "pages/logout.md"
+  - Finished example: "pages/finished-example.md"
   - Troubleshooting: "pages/troubleshoot.md"
   - Glossary: "pages/glossary.md"
 

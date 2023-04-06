@@ -18,14 +18,14 @@ Heres a list of users we created from the previous section when we created the d
 
 ```javascript
 const users = [
-	{
-		username: "John",
-		password: "password",
-	},
-	{
-		username: "Jane",
-		password: "password",
-	},
+  {
+    username: "John",
+    password: "password",
+  },
+  {
+    username: "Jane",
+    password: "password",
+  },
 ];
 ```
 
@@ -44,16 +44,27 @@ In the app.js file, we can create a middleware function that will set the curren
 
 Put the following code after where the deserializeUser function is defined:
 
-```javascript
-app.use((req, res, next) => {
-	res.locals.currentLoggedInUser = req.user;
-	next();
+```js
+...
+passport.deserializeUser((id, done) => {
+  const user = db.getUserById(id);
+  if (user) {
+    done(null, user);
+  } else {
+    done(null, false, { message: "User not found" });
+  }
 });
+
+app.use((req, res, next) => {
+  res.locals.currentLoggedInUser = req.user;
+  next();
+});
+...
 ```
 
 Using the `res.locals` object, we can set a variable that we can access in our EJS page. In this case, we are setting the `currentLoggedInUser` variable to the `req.user` object.
 
-!!!info "How does `res.locals` work?"
+!!!question "How does `res.locals` work?"
 
     In Express, `res.locals` is an object that is available throughout the lifecycle of a request. It is used to pass data from the server to the views that are rendered during that request-response cycle.
 
@@ -64,22 +75,22 @@ In the index.ejs file, we can now display the user's name if the user is logged 
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="/style.css" />
-		<title>Login</title>
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Login</title>
+  </head>
 
-	<body>
-		<% if (!currentLoggedInUser) { %>
-		<h1>Not Logged In</h1>
-		<a href="/login">Login</a>
-		<% } else { %>
-		<h1>Welcome <%= currentLoggedInUser.username %></h1>
-		<a href="/logout">Logout</a>
-		<% } %>
-	</body>
+  <body>
+    <% if (!currentLoggedInUser) { %>
+    <h1>Not Logged In</h1>
+    <a href="/login">Login</a>
+    <% } else { %>
+    <h1>Welcome <%= currentLoggedInUser.username %></h1>
+    <a href="/logout">Logout</a>
+    <% } %>
+  </body>
 </html>
 ```
 

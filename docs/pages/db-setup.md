@@ -19,7 +19,7 @@ Now that we have a mental model of a user, we can start creating the database.
 
 #### 1. Create a `userDB.js` file
 
-For simplicity sake, we will create a database in a file called `userDB.js`. This will allow us to easily access the database without having to set up a real database server.
+For simplicity sake, we will create a database in a file called `userDB.js`. This will allow us to easily access the database without having to set up a real database server. This file should be in the root directory.
 
 #### 2. Add sample data to the database
 
@@ -34,16 +34,16 @@ This will allow us to test our login feature.
 
 ```js
 const users = [
-	{
-		id: 1,
-		username: "John",
-		password: "password",
-	},
-	{
-		id: 2,
-		username: "Jane",
-		password: "password",
-	},
+  {
+    id: 1,
+    username: "John",
+    password: "password",
+  },
+  {
+    id: 2,
+    username: "Jane",
+    password: "password",
+  },
 ];
 ```
 
@@ -59,7 +59,7 @@ At the bottom of the `userDB.js` file, add the following function:
 
 ```js
 const getUserByUsername = (username) => {
-	return users.find((user) => user.username === username);
+  return users.find((user) => user.username === username);
 };
 ```
 
@@ -71,7 +71,7 @@ At the bottom of the `userDB.js` file, add the following function:
 
 ```js
 const getUserById = (id) => {
-	return users.find((user) => user.id === id);
+  return users.find((user) => user.id === id);
 };
 ```
 
@@ -85,9 +85,34 @@ At the bottom page put the following code:
 module.exports = { getUserByUsername, getUserById };
 ```
 
-This will allow us to use the functions in our `app.js` file.
+This will allow us to use the functions in our `app.js` file. The final file should look something like the following:
 
-#### 3. Import the function that will verify username and password in `app.js`
+```js
+const users = [
+  {
+    id: 1,
+    username: "John",
+    password: "password",
+  },
+  {
+    id: 2,
+    username: "Jane",
+    password: "password",
+  },
+];
+
+const getUserByUsername = (username) => {
+  return users.find((user) => user.username === username);
+};
+
+const getUserById = (id) => {
+  return users.find((user) => user.id === id);
+};
+
+module.exports = { getUserByUsername, getUserById };
+```
+
+#### 4. Import the function that will verify username and password in `app.js`
 
 At the top of the page before the index route, put the following code:
 

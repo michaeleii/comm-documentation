@@ -89,10 +89,9 @@ This will install the nodemon module and add it to the `package.json` file as a 
 #### 5. Put the `start` Script in the `package.json` File
 
 ```json
-
 "scripts": {
     "start": "nodemon app.js"
-  },
+},
 ```
 
 This will add the `start` script to the `package.json` file. This script will allow us to type `npm start` in the terminal and start the server.
@@ -113,7 +112,7 @@ mkdir public
 
 This will create a directory called `public`, which will hold all the static files for the project.
 
-!!! info "What are static files?"
+!!! question "What are static files?"
 
         **Static files** are files that are not rendered by the server, such as images, CSS files, and JavaScript files.
 
@@ -121,11 +120,7 @@ This will create a directory called `public`, which will hold all the static fil
 
 #### 2. Creating the Style.css File
 
-```bash
-touch public/style.css
-```
-
-This will create a file called `style.css` inside the `public` directory.
+Create a file called `style.css` in the `public` directory.
 
 #### 3. Creating the Views Directory
 
@@ -137,27 +132,15 @@ This will create a directory called `views`, which will hold all the ejs files f
 
 #### 4. Creating the Homepage Ejs File
 
-```bash
-touch views/index.ejs
-```
-
-This will create a file called `index.ejs` inside the `views` directory. This file will be the homepage for the project.
+Create a file called `index.ejs` in the `views` directory. This file will be the homepage for the project.
 
 #### 5. Creating the Login Page Ejs File
 
-```bash
-touch views/login.ejs
-```
-
-This will create a file called `login.ejs` inside the `views` directory. This file will be the login page for the project.
+Create a file called `login.ejs` in the `views directory`. This file will be the login page for the project.
 
 #### 6. Creating the Express App File
 
-```bash
-touch app.js
-```
-
-This will create a file called `app.js` inside the `login-form-tutorial` directory. This file will hold all the code for the Express app.
+Create a file called `app.js` in the root directory. This file will hold all the code for the Express app.
 
 We will be writing the code for the Express app in the next section.
 

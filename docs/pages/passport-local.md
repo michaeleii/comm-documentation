@@ -9,7 +9,7 @@ To login a user, we need to check if the username and password are correct.
 - If they are correct, we will store the user's information in the session.
 - If they are incorrect, we will redirect the user back to the login page.
 
-!!! info "How does a session work?"
+!!!question info "How does a session work?"
 
     When a user logs in, we will store their information in the session. This information will be stored in a cookie on the user's browser. When the user visits the website again, the cookie will be sent to the server. The server will then use the information in the cookie to identify the user. This is how we can keep track of the user's session. The user will be logged in until they log out or the session expires.
 
@@ -96,15 +96,15 @@ After the `passport.session()` middleware, put the following code:
 ```js
 // Configure Passport Local Strategy
 passport.use(
-	new LocalStrategy((username, password, done) => {
-		const user = db.getUserByUsername(username);
-		if (!user) {
-			return done(null, false, { message: "Incorrect username" });
-		} else if (user.password !== password) {
-			return done(null, false, { message: "Incorrect password" });
-		}
-		return done(null, user);
-	})
+  new LocalStrategy((username, password, done) => {
+    const user = db.getUserByUsername(username);
+    if (!user) {
+      return done(null, false, { message: "Incorrect username" });
+    } else if (user.password !== password) {
+      return done(null, false, { message: "Incorrect password" });
+    }
+    return done(null, user);
+  })
 );
 ```
 
@@ -121,11 +121,11 @@ After the previous function configuring the local strategy, replace the POST log
 // Login Route
 
 app.post(
-	"/login",
-	passport.authenticate("local", {
-		successRedirect: "/",
-		failureRedirect: "/login",
-	})
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+  })
 );
 ```
 
@@ -144,17 +144,17 @@ Put the following code right after where you configured the local strategy:
 ```js
 // Serialize User
 passport.serializeUser((user, done) => {
-	done(null, user.id);
+  done(null, user.id);
 });
 
 // Deserialize User
 passport.deserializeUser((id, done) => {
-	const user = db.getUserById(id);
-	if (user) {
-		done(null, user);
-	} else {
-		done(null, false, { message: "User not found" });
-	}
+  const user = db.getUserById(id);
+  if (user) {
+    done(null, user);
+  } else {
+    done(null, false, { message: "User not found" });
+  }
 });
 ```
 
@@ -167,6 +167,76 @@ Heres how it works:
 - The deserialize user function will be called when the user visits the website again. It will get the user's information from the database using the id stored in the session.
 
 The `done` function here is used to tell Passport that the user has been serialized or deserialized.
+
+The final file should look like this:
+
+```js
+const express = require("express");
+const db = require("./userDB");
+const passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
+const session = require("express-session");
+
+const app = express();
+
+app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static("public"));
+app.use(
+  session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(
+  new LocalStrategy((username, password, done) => {
+    const user = db.getUserByUsername(username);
+    if (!user) {
+      return done(null, false, { message: "Incorrect username" });
+    } else if (user.password !== password) {
+      return done(null, false, { message: "Incorrect password" });
+    }
+    return done(null, user);
+  })
+);
+
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
+passport.deserializeUser((id, done) => {
+  const user = db.getUserById(id);
+  if (user) {
+    done(null, user);
+  } else {
+    done(null, false, { message: "User not found" });
+  }
+});
+
+app.get("/", (req, res) => {
+  res.render("index");
+});
+
+app.get("/login", (req, res) => {
+  res.render("login");
+});
+
+app.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+  })
+);
+
+app.listen(3000, () => {
+  console.log("Login App listening on port 3000!");
+});
+```
 
 ## Conclusion
 
