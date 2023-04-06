@@ -49,6 +49,10 @@ const users = [
 
 This function will return the user object if the username and password match. Otherwise, it will return `undefined`. In the next section we will be creating functions to search the database for a user.
 
+!!! danger "Don't store passwords in plain text"
+
+    In a real application, you would not store the password in plain text. You would use a hashing algorithm to hash the password. This will make it more difficult for someone to get the password. We will not be covering hashing in this tutorial to keep things simple.
+
 ## Query the database
 
 Now that we have a database, we need to be able to query it. We want to be able to check if the username and password are correct. So we will create queries that will allow us to verify the username and password.
