@@ -120,9 +120,10 @@ In your `app.js`, at the top of the page before the index route, put the followi
 
 ```js
 ...
-const db = require("./userDB"); // <--- import the database here
+//Import the database functions here
+const db = require("./userDB");
 
-app.get("/", (req, res) => { // <--- index route
+app.get("/", (req, res) => { // <--- This is the index route
     res.render("index");
 });
 ...

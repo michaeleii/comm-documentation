@@ -18,14 +18,14 @@ Heres a list of users we created from the previous section when we created the d
 
 ```javascript
 const users = [
-  {
-    username: "John",
-    password: "password",
-  },
-  {
-    username: "Jane",
-    password: "password",
-  },
+	{
+		username: "John",
+		password: "password",
+	},
+	{
+		username: "Jane",
+		password: "password",
+	},
 ];
 ```
 
@@ -72,25 +72,27 @@ Using the `res.locals` object, we can set a variable that we can access in our E
 
 In the index.ejs file, we can now display the user's name if the user is logged in. Otherwise, we will display `Not Logged In` and a link to the login page.
 
+Replace the contents of the index.ejs file with the following code:
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style.css" />
-    <title>Login</title>
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/style.css" />
+		<title>Login</title>
+	</head>
 
-  <body>
-    <% if (!currentLoggedInUser) { %>
-    <h1>Not Logged In</h1>
-    <a href="/login">Login</a>
-    <% } else { %>
-    <h1>Welcome <%= currentLoggedInUser.username %></h1>
-    <a href="/logout">Logout</a>
-    <% } %>
-  </body>
+	<body>
+		<% if (!currentLoggedInUser) { %>
+		<h1>Not Logged In</h1>
+		<a href="/login">Login</a>
+		<% } else { %>
+		<h1>Welcome <%= currentLoggedInUser.username %></h1>
+		<a href="/logout">Logout</a>
+		<% } %>
+	</body>
 </html>
 ```
 

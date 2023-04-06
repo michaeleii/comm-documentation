@@ -26,7 +26,7 @@ Open the terminal and type the following command:
 mkdir login-form-tutorial
 ```
 
-This will create a directory called `login-form-tutorial`, which will hold all the files for the project.
+You will get no feedback, but this will create a directory called `login-form-tutorial`, which will hold all the files for the project.
 
 #### 2. Navigate to the Project Directory
 
@@ -86,7 +86,11 @@ This will install the nodemon module and add it to the `package.json` file as a 
 
 [Nodemon](https://www.npmjs.com/package/nodemon) is a module that automatically restarts the server whenever a file is changed.
 
-#### 5. Put the `start` Script in the `package.json` File
+#### 5. Open the folder in VS Code
+
+Navigate to the `login-form-tutorial` directory and open it in VS Code.
+
+#### 6. Put the `start` Script in the `package.json` File
 
 In the `package.json` file, there is a section called `scripts`. This section is used to store all the scripts for the project.
 
