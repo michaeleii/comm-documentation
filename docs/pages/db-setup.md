@@ -34,16 +34,16 @@ This will allow us to test our login feature.
 
 ```js
 const users = [
-  {
-    id: 1,
-    username: "John",
-    password: "password",
-  },
-  {
-    id: 2,
-    username: "Jane",
-    password: "password",
-  },
+	{
+		id: 1,
+		username: "John",
+		password: "password",
+	},
+	{
+		id: 2,
+		username: "Jane",
+		password: "password",
+	},
 ];
 ```
 
@@ -59,7 +59,7 @@ At the bottom of the `userDB.js` file, add the following function:
 
 ```js
 const getUserByUsername = (username) => {
-  return users.find((user) => user.username === username);
+	return users.find((user) => user.username === username);
 };
 ```
 
@@ -71,7 +71,7 @@ At the bottom of the `userDB.js` file, add the following function:
 
 ```js
 const getUserById = (id) => {
-  return users.find((user) => user.id === id);
+	return users.find((user) => user.id === id);
 };
 ```
 
@@ -85,28 +85,30 @@ At the bottom page put the following code:
 module.exports = { getUserByUsername, getUserById };
 ```
 
-This will allow us to use the functions in our `app.js` file. The final file should look something like the following:
+This will allow us to use the functions in our `app.js` file.
+
+The final file should look something like the following:
 
 ```js
 const users = [
-  {
-    id: 1,
-    username: "John",
-    password: "password",
-  },
-  {
-    id: 2,
-    username: "Jane",
-    password: "password",
-  },
+	{
+		id: 1,
+		username: "John",
+		password: "password",
+	},
+	{
+		id: 2,
+		username: "Jane",
+		password: "password",
+	},
 ];
 
 const getUserByUsername = (username) => {
-  return users.find((user) => user.username === username);
+	return users.find((user) => user.username === username);
 };
 
 const getUserById = (id) => {
-  return users.find((user) => user.id === id);
+	return users.find((user) => user.id === id);
 };
 
 module.exports = { getUserByUsername, getUserById };
@@ -114,7 +116,7 @@ module.exports = { getUserByUsername, getUserById };
 
 #### 4. Import the function that will verify username and password in `app.js`
 
-At the top of the page before the index route, put the following code:
+In your `app.js`, at the top of the page before the index route, put the following code:
 
 ```js
 ...

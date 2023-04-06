@@ -12,6 +12,8 @@ In this section we will be creating the Express app and create the homepage.
 
 #### 1. Create an Express app
 
+Put the following code in the `app.js` file:
+
 ```javascript
 const express = require("express");
 const app = express();

@@ -88,6 +88,10 @@ This will install the nodemon module and add it to the `package.json` file as a 
 
 #### 5. Put the `start` Script in the `package.json` File
 
+In the `package.json` file, there is a section called `scripts`. This section is used to store all the scripts for the project.
+
+There should be a `test` script in the `scripts` section. Replace the `test` script with the following code:
+
 ```json
 "scripts": {
     "start": "nodemon app.js"
@@ -136,7 +140,7 @@ Create a file called `index.ejs` in the `views` directory. This file will be the
 
 #### 5. Creating the Login Page Ejs File
 
-Create a file called `login.ejs` in the `views directory`. This file will be the login page for the project.
+Create a file called `login.ejs` in the `views` directory. This file will be the login page for the project.
 
 #### 6. Creating the Express App File
 
