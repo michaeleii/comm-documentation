@@ -32,7 +32,7 @@ We used Mkdocs to build this documentation as it is a static site generator that
 
 ### Markdown
 
-The documentation was written entirely in markdown.
+The documentation was written entirely in markdown using VSCODE.
 
 We learned how to add the following things into our documentation using markdown:
 
